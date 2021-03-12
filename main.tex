@@ -140,17 +140,7 @@ Si me preguntan como funciona esto, no tengo idea, si me preguntan de donde lo s
 
 \section{Elementos Flotantes}
 
-En el paquete \texttt{multicols} uno obtiene el texto en dos columnas escribiéndolo dentro del entorno:
-\begin{Verbatim}[fontsize=\fontsize{7pt}{7pt}\selectfont]
-\begin{multicols}{2}
-Texto ...
-\end{multicols}
-\end{Verbatim}
-Sin embargo, cuando uno quiere insertar un elemento flotante (tabla o figura) que ocupe el ancho de las dos columnas se tiene que interrumpir este entorno, insertar el elemento flotante y volverlo a abrir. Esto tiene como consecuencia que la figura no <<flote>> en el texto, y quede ubicada donde uno exactamente indicó. Si, por ejemplo, queremos que la imagen aparezca en la parte superior de la página, debemos hacer mediciones milimétricas para determinar donde cortar el texto e insertar la figura (y el resultado de esto no siempre es prolijo). O sea, debemos colocar la figura manualmente. Y el punto es: ¿por que no usar directamente Microsoft Word si nos gusta acomodar figuras manualmente? Por esto usamos la opcion \texttt{twocolumn} de la clase \texttt{article}. Esto nos permite utilizar los entornos \texttt{figure} y \texttt{table} para elementos flotantes que ocupen el ancho de \emph{una sola columna} y los entornos \texttt{figure*} y \texttt{table*} para los elementos que abarquen \emph{ambas columnas}.
-
-\subsection{Tablas}
-
-\begin{table}[b]
+\begin{table}[t]
     \centering
     \caption{Valores aceptados para la velocidad de la luz y la constante de Boltzmann.}
     \label{tab:tabla_1}
@@ -190,6 +180,16 @@ Sin embargo, cuando uno quiere insertar un elemento flotante (tabla o figura) qu
         \end{threeparttable}
     }
 \end{table*}
+
+En el paquete \texttt{multicols} uno obtiene el texto en dos columnas escribiéndolo dentro del entorno:
+\begin{Verbatim}[fontsize=\fontsize{7pt}{7pt}\selectfont]
+\begin{multicols}{2}
+Texto ...
+\end{multicols}
+\end{Verbatim}
+Sin embargo, cuando uno quiere insertar un elemento flotante (tabla o figura) que ocupe el ancho de las dos columnas se tiene que interrumpir este entorno, insertar el elemento flotante y volverlo a abrir. Esto tiene como consecuencia que la figura no <<flote>> en el texto, y quede ubicada donde uno exactamente indicó. Si, por ejemplo, queremos que la imagen aparezca en la parte superior de la página, debemos hacer mediciones milimétricas para determinar donde cortar el texto e insertar la figura (y el resultado de esto no siempre es prolijo). O sea, debemos colocar la figura manualmente. Y el punto es: ¿por que no usar directamente Microsoft Word si nos gusta acomodar figuras manualmente? Por esto usamos la opcion \texttt{twocolumn} de la clase \texttt{article}. Esto nos permite utilizar los entornos \texttt{figure} y \texttt{table} para elementos flotantes que ocupen el ancho de \emph{una sola columna} y los entornos \texttt{figure*} y \texttt{table*} para los elementos que abarquen \emph{ambas columnas}.
+
+\subsection{Tablas}
 
 En la Tabla \ref{tab:tabla_1} es un ejemplo de una tabla que abarca solo una columna. Si te preguntas como se logra que se acomode tan finamente al ancho es porque estamos usando el entorno \texttt{tabular} dentro del comando \texttt{risezebox}:
 \begin{Verbatim}[fontsize=\fontsize{7pt}{7pt}\selectfont]
@@ -306,7 +306,6 @@ dentro del entorno \texttt{center} para que aparezca centrado. Es útil tener el
 \end{enumerate}
 
 \lipsum[1-4]
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliography{references}

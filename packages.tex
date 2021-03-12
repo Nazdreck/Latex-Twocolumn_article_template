@@ -1,0 +1,86 @@
+%%%%%%%%%%%% Paquetes %%%%%%%%%%%%
+% CODIFICACIÓN Y CONFIGURACIÓN DE PAGINA
+\usepackage[utf8]{inputenc}             % Configura el Encoding (algo asi como el lenguaje interno de Latex)
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,headsep=0.1cm]{geometry}    % Margenes
+\usepackage[spanish,es-tabla]{babel}    % Configura el Idioma a Español
+\usepackage{fancyhdr}                   % Para encabezados bonitos
+\usepackage{titlesec}                   % Para personalizar el titulo
+% GRÁFICOS, LISTAS y TABLAS
+\usepackage{graphicx}           % Para insertar figuras
+\usepackage{enumerate}          % Mas control en el uso de listas
+\usepackage{booktabs}           % Para tablas tipo papers
+\usepackage{threeparttable}     % Mejor manejo de tablas
+\usepackage[font=small,labelfont=bf,singlelinecheck=false,justification=justified]{caption}
+% MATEMÁTICA
+\usepackage{amsmath}            % Incorpora comodidades matematicas
+\usepackage{amsfonts}           % Fuentes extras para texto matematico
+\usepackage{amssymb}            % Simbolos adicionales
+\usepackage{siunitx}            % Herramientas para el uso de unidades fisicas
+% FORMATO Y FUENTES
+\usepackage{mathptmx}           %
+\usepackage{newtxtext}          %
+\usepackage{newtxmath}          %
+\usepackage[x11names]{xcolor}   % Permite cambiar de color el texto
+\usepackage{setspace}
+\usepackage{soul}               % Opciones de formato (texto tachado)
+% REFERENCIAS Y GLOSARIO
+\usepackage{hyperref}           % Para hipervinculos en el PDF
+\usepackage{natbib}             % Controlador de biblografia (no compatible con bibtex!!!)
+% OTROS
+\usepackage{lipsum}             % Parrafos de texto mudo
+\usepackage{fancyvrb}
+\usepackage{appendix}
+\usepackage{flushend}
+
+
+%%%%%%%%%%%% CONFIGURACION %%%%%%%%%%%%
+
+% Ruta de imagenes
+\graphicspath{{./figures/}}
+
+%%%%% Formato de titulos
+%%% Formato Secciones
+\titlespacing*{\section}{0pt}{*2}{*1}
+\titleformat*{\section}{\fontsize{10pt}{10pt}\selectfont\bfseries}
+%%% Formato Subsecciones
+\titlespacing*{\subsection}{0pt}{*2}{*1}
+\titleformat*{\subsection}{\fontsize{10pt}{10pt}\selectfont\itshape}
+%%% Formato Subsubsecciones
+\titlespacing*{\subsubsection}{0pt}{*2}{*1}
+\titleformat*{\subsubsection}{\fontsize{10pt}{10pt}\selectfont\itshape}
+
+
+
+%%%%% Bibliografia y Citas
+%%% Carga estilo de bibliografia
+\bibliographystyle{bibstyle}
+%%% Cambia el titulo de la seccion de bibliografia
+\addto\captionsspanish{\def\bibname{Referencias}}
+%%% Cambia el estilo de las citas
+\setcitestyle{authoryear,open={(},close={)}}
+\bibpunct{\textcolor{blue}{(}}{\textcolor{blue}{)}}{,}{a}{}{;}
+
+%%%%%  Hipervinculos
+%%% Estilo de hipervinculos
+\hypersetup{
+    colorlinks = true,
+    linkcolor = {black},
+    citecolor = {blue},
+    urlcolor = {blue},
+    anchorcolor = {green},
+    filecolor = {orange},
+    menucolor = {red},
+    runcolor = {cyan}
+}
+
+% Cambio de margenes
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
